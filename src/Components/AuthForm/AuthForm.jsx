@@ -8,8 +8,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AuthForm() {
+  const navigate = useNavigate();
+
   const [isLogin, setIsLogin] = useState(true);
   const [inputs, setInputs] = useState({
     email: "",
@@ -18,7 +21,11 @@ function AuthForm() {
   });
 
   const handleAuth = () => {
-    console.log("inputs", inputs);
+    if (!inputs.email || !inputs.password) {
+      alert("Please fill all the fields");
+      return;
+    }
+    navigate("/");
   };
 
   return (
