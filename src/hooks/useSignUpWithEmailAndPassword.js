@@ -21,7 +21,7 @@ const useSignUpWithEmailAndPassword = () => {
     if (
       !inputs.email ||
       !inputs.password ||
-      !inputs.username ||
+      !inputs.userName ||
       !inputs.fullName
     ) {
       showToast("Error", "Please fill all the fields", "error");
@@ -51,7 +51,7 @@ const useSignUpWithEmailAndPassword = () => {
         const userDoc = {
           uid: newUser.user.uid,
           email: inputs.email,
-          username: inputs.username,
+          username: inputs.userName,
           fullName: inputs.fullName,
           bio: "",
           profilePicURL: "",
