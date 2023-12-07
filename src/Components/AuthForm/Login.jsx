@@ -7,25 +7,23 @@ const Login = () => {
     email: "",
     password: "",
   });
-
-  const [loading, error, login] = useLogin();
-
+  const { loading, error, login } = useLogin();
   return (
     <>
       <Input
         placeholder="Email"
         fontSize={14}
         type="email"
-        value={inputs.email}
         size={"sm"}
+        value={inputs.email}
         onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
       />
       <Input
         placeholder="Password"
         fontSize={14}
+        size={"sm"}
         type="password"
         value={inputs.password}
-        size={"sm"}
         onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
       />
       {error && (
@@ -42,7 +40,7 @@ const Login = () => {
         isLoading={loading}
         onClick={() => login(inputs)}
       >
-        Log In
+        Log in
       </Button>
     </>
   );
